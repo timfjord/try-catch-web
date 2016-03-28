@@ -1,0 +1,38 @@
+<ul class="list-group">
+  <li class="list-group-item" ng-if="newItem && newItem.createable">
+    <form name="forms.create" ng-submit="add()">
+      <div class="input-group" ng-class="{'has-error': forms.create.name.$dirty && forms.create.name.$invalid}">
+        <input type="text" name="name" class="form-control" placeholder="Name" ng-model="newItem.name" required>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit" ng-disabled="sending || forms.create.$invalid">
+            <span class="glyphicon glyphicon-plus" />
+          </button>
+        </span>
+      </div>
+    </form>
+  </li>
+  <div ng-repeat="item in items">
+    <a ng-if="!item.editMode" class="list-group-item" ng-href="{{ href(item) }}">
+      <div class="btn-group pull-right">
+        <button ng-show="item.editable" type="button" class="btn btn-default btn-xs" ng-click="edit(item, $event)"><span class="glyphicon glyphicon-pencil" /></button>
+        <button ng-show="item.deleteable" type="button" class="btn btn-default btn-xs" ng-click="delete(item, $event, $index)"><span class="glyphicon glyphicon-trash" /></button>
+      </div>
+      {{ item.name }}
+    </a>
+    <div ng-if="item.editMode" class="list-group-item">
+      <form name="forms.update" ng-submit="update(item)">
+        <div class="input-group" ng-class="{'has-error': forms.update.name.$dirty && forms.update.name.$invalid}">
+          <input type="text" name="name" class="form-control" placeholder="Name" ng-model="item.name" required>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit" ng-disabled="sending || forms.update.$invalid">
+              <span class="glyphicon glyphicon-floppy-disk" />
+            </button>
+            <button class="btn btn-default" type="button" ng-click="reset(item)">
+              <span class="glyphicon glyphicon-remove-circle" />
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</ul>

@@ -1,0 +1,23 @@
+{
+  "name": "try-catch",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "1.4.x"
+  },
+  "dependencies": {
+    "lodash": "3.10.x",
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.4.0",
+    "angularjs-rails-resource": "^2.1.0",
+    "ngstorage": "^0.3.10"
+  }
+}

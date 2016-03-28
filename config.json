@@ -1,0 +1,4 @@
+{
+  "development": { "HOST": "http://localhost:3000" },
+  "production": { "HOST": "https://try-catch-api.herokuapp.com" }
+}

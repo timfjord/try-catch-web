@@ -1,0 +1,14 @@
+.panel > .panel-content > .list-group {
+  margin-bottom: 0;
+
+  .list-group-item {
+    border-width: 1px 0;
+    border-radius: 0;
+
+    &:last-child {
+      border-bottom: 0;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+}
